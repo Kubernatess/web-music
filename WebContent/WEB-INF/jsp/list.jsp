@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="defined" uri="http://www.lumlum.cn/lumlum" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +13,7 @@ img{
 	height:50%;	
 }
 </style>
+<c:set var="path" value="${pageContext.request.contextPath}" scope="page"/>
 <link href="css/navigation.css" rel="stylesheet" type="text/css">
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -53,8 +56,8 @@ img{
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YouTube<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">个人中心</a></li>
-            <li><a href="#">我的音乐</a></li>
+          	<li><a href="#">个人中心</a></li>
+            <li><a href="${path}/list" target="_blank">我的音乐</a></li>
             <li><a href="#">消息</a></li>
             <li><a href="#">设置</a></li>
             <li role="separator" class="divider"></li>
@@ -80,11 +83,7 @@ img{
           	<div class="form-group">
                     <label for="video_name">音乐名称</label>
                     <input type="text" class="form-control" id="video_name">
-                </div>
-                <div class="form-group">
-                    <label for="destroy">描述</label>
-                    <textarea class="form-control" rows="4" id="destroy"></textarea>
-                </div>         
+                </div>        
                 <div class="form-group">
                     <label for="upload">上传音乐</label>
                     <input type="file" id="upload">
@@ -116,21 +115,8 @@ img{
         </div>
   		<div class="col-md-10">
         	<div class="list-group">
-  				<a href="#" class="list-group-item active">
-    				Cras justo odio
-  				</a>
-  				<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  				<a href="#" class="list-group-item">Morbi leo risus</a>
-  				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  				<a href="#" class="list-group-item">Vestibulum at eros</a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  				<a href="#" class="list-group-item">Morbi leo risus</a>
-  				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  				<a href="#" class="list-group-item">Vestibulum at eros</a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  				<a href="#" class="list-group-item">Morbi leo risus</a>
-  				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  				<a href="#" class="list-group-item">Vestibulum at eros</a>
+  				<a href="#" class="list-group-item active">Cras justo odio</a>
+  				<defined:fetchList />
 			</div>
         </div>
     </div>

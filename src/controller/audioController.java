@@ -20,18 +20,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-public class audioController {
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String display(HttpServletRequest request) {  		
-		String author = request.getParameter("author");
-		String videoName = request.getParameter("videoName");
-		request.setAttribute("author", author);
-		request.setAttribute("videoName", videoName);
-		return "list";
-	}
+public class AudioController {
 	@RequestMapping(value = "/play", method = RequestMethod.GET)
-	public String play(HttpServletRequest request) {  		
-		
+	public String play() {  			
 		return "play";
+	}
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public String list() {  			
+		return "list";
 	}
 }

@@ -15,8 +15,8 @@
     </tag>
     <tag>
         <description>Outputs Hello, World</description>
-        <name>fetchRecent</name>
-        <tag-class>definedJSTL.fetchRecent</tag-class>
+        <name>fetchList</name>
+        <tag-class>definedJSTL.fetchList</tag-class>
         <body-content>empty</body-content>
     </tag>
     <tag>

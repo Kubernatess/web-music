@@ -13,6 +13,7 @@ video{
     height:198px;	
 }
 </style>
+<c:set var="path" value="${pageContext.request.contextPath}" scope="page"/>
 <link href="css/navigation.css" rel="stylesheet" type="text/css">
 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -58,8 +59,8 @@ video{
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YouTube<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">个人中心</a></li>
-            <li><a href="#">我的音乐</a></li>
+          	<li><a href="#">个人中心</a></li>
+            <li><a href="${path}/list" target="_blank">我的音乐</a></li>            
             <li><a href="#">消息</a></li>
             <li><a href="#">设置</a></li>
             <li role="separator" class="divider"></li>
@@ -85,10 +86,6 @@ video{
           	<div class="form-group">
                     <label for="video_name">音乐名称</label>
                     <input type="text" class="form-control" id="video_name">
-                </div>
-                <div class="form-group">
-                    <label for="destroy">描述</label>
-                    <textarea class="form-control" rows="4" id="destroy"></textarea>
                 </div>         
                 <div class="form-group">
                     <label for="upload">上传音乐</label>

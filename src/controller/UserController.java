@@ -29,7 +29,6 @@ public class UserController{
 	public String addUser(@ModelAttribute("SpringWeb")User user,ModelMap model,HttpSession session) throws IOException {
 		openSession = MyBatisUtils.getSqlSessionFactory();
 		UserMapper mapper=openSession.getMapper(UserMapper.class);
-		user.setVIP(false);
 		mapper.addUser(user);
 	    openSession.commit();
 		if(user.getUsername() != null){
