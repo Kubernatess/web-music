@@ -9,8 +9,8 @@
     <uri>http://www.lumlum.cn/lumlum</uri>
     <tag>
         <description>Outputs Hello, World</description>
-        <name>fetchPopular</name>
-        <tag-class>definedJSTL.fetchPopular</tag-class>
+        <name>fetchRecommend</name>
+        <tag-class>definedJSTL.fetchRecommend</tag-class>
         <body-content>empty</body-content>
     </tag>
     <tag>
@@ -21,8 +21,8 @@
     </tag>
     <tag>
         <description>Outputs Hello, World</description>
-        <name>fetchRelevant</name>
-        <tag-class>definedJSTL.fetchRelevant</tag-class>
+        <name>fetchPopular</name>
+        <tag-class>definedJSTL.fetchPopular</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

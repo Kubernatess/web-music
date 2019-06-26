@@ -12,7 +12,6 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 import org.apache.ibatis.session.SqlSession;
 
 import pojo.Audio;
-import mapper.UserMapper;
 import mapper.AudioMapper;
 import utils.MyBatisUtils;
 
@@ -22,21 +21,16 @@ public class fetchPopular extends SimpleTagSupport{
 	public void setJspContext(JspContext pc) {
 		this.pc=(PageContext) pc;
 	}
-	public void doTag() throws JspException, IOException {
+	public void doTag() throws JspException, IOException{
 		openSession = MyBatisUtils.getSqlSessionFactory();
 		String path=pc.getServletContext().getContextPath();
 		AudioMapper mapper=openSession.getMapper(AudioMapper.class);
-		List<Audio> audios = mapper.getAllVideoInfo();
+		List<Audio> audios = mapper.getAllAudioInfo();
 		for(Audio audio:audios){
-			pc.getOut().print("<div class=\'col-xs-6 col-md-4\'>");
-			//传递参数videoName到display页面,使display页面显示特定内容
-			pc.getOut().print("<a href=\'"+path+"/display?author="+audio.getAuthor()+"&videoName="+audio.getAudioName()+"\' target=\'_blank\' class=\'thumbnail\'>");
-			pc.getOut().print("<video src=\'"+path+"/video/"+audio.getAuthor()+"/"+audio.getAudioName()+".mp4\'>");
-			pc.getOut().print("Your browser does not support the video tag.");
-			pc.getOut().print("</video>");
-			pc.getOut().print("<div class=\'caption\'>");
-			pc.getOut().print("<h3>"+audio.getAudioName()+"</h3>");
-			pc.getOut().print("</div></a></div>");
+			pc.getOut().print("<a href=\'"+path+"/play?audioName="+audio.getAudioName()+"\' target=\'_blank\' class='list-group-item'>");
+			pc.getOut().print(audio.getAudioName());
+			pc.getOut().print("</a>");
 		}
 	}
+	
 }

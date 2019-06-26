@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : doudizhu
 Source Server Version : 50720
 Source Host           : localhost:3306
-Source Database       : video
+Source Database       : music
 
 Target Server Type    : MYSQL
 Target Server Version : 50720
 File Encoding         : 65001
 
-Date: 2019-06-24 20:37:04
+Date: 2019-06-26 21:45:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,8 +28,8 @@ CREATE TABLE `review` (
   PRIMARY KEY (`username`,`review_date`),
   KEY `author` (`author`),
   KEY `upload_date` (`upload_date`),
-  CONSTRAINT `review_ibfk_1` FOREIGN KEY (`author`) REFERENCES `video` (`author`),
-  CONSTRAINT `review_ibfk_2` FOREIGN KEY (`upload_date`) REFERENCES `video` (`upload_date`),
+  CONSTRAINT `review_ibfk_1` FOREIGN KEY (`author`) REFERENCES `audio` (`author`),
+  CONSTRAINT `review_ibfk_2` FOREIGN KEY (`upload_date`) REFERENCES `audio` (`upload_date`),
   CONSTRAINT `review_ibfk_3` FOREIGN KEY (`username`) REFERENCES `user` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -5,7 +5,6 @@ public class User {
 	private String password;
 	private String email;
 	private String phone;
-	private boolean VIP;
 	
 	public String getUsername() {
 		return username;
@@ -30,11 +29,5 @@ public class User {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public boolean isVIP() {
-		return VIP;
-	}
-	public void setVIP(boolean vIP) {
-		VIP = vIP;
 	}
 }

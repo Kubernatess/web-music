@@ -11,7 +11,7 @@
 	</settings>
 	<!-- 批量起别名 -->
 	<typeAliases>	
-		<package name="bean"/>
+		<package name="pojo"/>
 	</typeAliases>
     <!--配置环境 ，默认的环境id为mysql -->
     <environments default="development">

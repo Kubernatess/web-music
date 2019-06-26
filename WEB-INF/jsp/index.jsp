@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="defined" uri="http://www.lumlum.cn/lumlum" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-CN">
 <head>
@@ -123,36 +125,8 @@ video{
   				<div class="tab-content">
     				<div role="tabpanel" class="tab-pane active" id="home">
                     	<div class="row">
-                          	<div class="col-xs-6 col-md-3">
-                            	<a href="#" class="thumbnail">
-                              		<img src="images/Red.jpg">
-                            	</a>
-                          	</div>
-                          	<div class="col-xs-6 col-md-3">
-                            	<a href="#" class="thumbnail">
-                              		<img src="images/reputation.jpg">
-                            	</a>
-                          	</div>
-                            <div class="col-xs-6 col-md-3">
-                            	<a href="#" class="thumbnail">
-                              		<img src="images/Fearless.jpg">
-                            	</a>
-                          	</div>
-                            <div class="col-xs-6 col-md-3">
-                            	<a href="#" class="thumbnail">
-                              		<img src="images/Speak Now.jpg">
-                            	</a>
-                          	</div>
-                            <div class="col-xs-6 col-md-3">
-                            	<a href="#" class="thumbnail">
-                              		<img src="images/Confident.jpg">
-                            	</a>
-                          	</div>
-                            <div class="col-xs-6 col-md-3">
-                            	<a href="#" class="thumbnail">
-                              		<img src="images/Boyfriend.jpg">
-                            	</a>
-                          	</div>
+                          	<defined:fetchRecommend />
+                          	
                         </div>
                     </div>
     				<div role="tabpanel" class="tab-pane" id="profile">...</div>
@@ -165,11 +139,7 @@ video{
 		<div class="col-md-3">
         	<h1>音乐风云榜</h1>
         	<div class="list-group">
-  				<a href="#" class="list-group-item active">Cras justo odio</a>
-  				<a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  				<a href="#" class="list-group-item">Morbi leo risus</a>
-  				<a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  				<a href="#" class="list-group-item">Vestibulum at eros</a>
+  				<defined:fetchPopular />
 			</div>
         </div>
 	</div>
